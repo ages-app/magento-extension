@@ -1,0 +1,6 @@
+.idea/
+.DS_*
+vendor/
+.vscode
+*.swp
+*.swo

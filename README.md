@@ -1,3 +1,3 @@
-Ages Magento Extension
+# Ages Magento Extension
 
-Need to add documentation here.
+Integrate Magento 2 with Ages Chat Widget app.

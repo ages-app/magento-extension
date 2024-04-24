@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @var \Ages\Integration\Block\Script $block
+ * @var \Magento\Framework\Escaper $escaper
+ */
+?>
+<?php if ($block->isWidgetEnabled()): ?>
+<script>
+    (() => {
+        window.agconfig = {companyId: "<?= $escaper->escapeJs($block->getCompanyHash()) ?>"};
+        const s = document.createElement('script');
+        s.src = "<?= $escaper->escapeJs($block->getWidgetLoaderUrl()) ?>";
+        s.async = true;
+        document.body.appendChild(s);
+        console.log("Hello from <?= $escaper->escapeJs($block->getCompanyHash()) ?>");
+    })();
+</script>
+<?php endif; ?>

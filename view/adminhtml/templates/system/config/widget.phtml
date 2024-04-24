@@ -1,0 +1,57 @@
+<?php
+
+/**
+ * @var $block \Ages\Integration\Block\System\Config\Widget
+ * @var \Magento\Framework\View\Helper\SecureHtmlRenderer $secureRenderer
+ * @var \Magento\Framework\Escaper $escaper
+ */
+?>
+
+<?php
+$scriptString = <<<script
+require([
+    'jquery',
+    'prototype'
+], function(jQuery) {
+    const url = '{$escaper->escapeJs($block->getUrl('*/ages_integration/toggleWidget'))}';
+
+    jQuery('#install_widget_button').on('click', function () {
+        new Ajax.Request(url, {
+            method: 'post',
+            parameters: { enabled: 1 },
+            onComplete: function (widget) {
+                const response = widget.responseJSON;
+                if (response.success) {
+                    window.location.reload();
+                } else {
+                    console.warn(response.errorMessage);
+                }
+            }.bind(this)
+        });
+    });
+
+    jQuery('#uninstall_widget_button').on('click', function () {
+        new Ajax.Request(url, {
+            method: 'post',
+            parameters: { enabled: 0 },
+            onComplete: function (widget) {
+                const response = widget.responseJSON;
+                if (response.success) {
+                    window.location.reload();
+                } else {
+                    console.warn(response.errorMessage);
+                }
+            }.bind(this)
+        });
+    });
+});
+script;
+?>
+<?= /* @noEscape */ $secureRenderer->renderTag('script', [], $scriptString, false) ?>
+
+<?php if ($block->getCompanyHash()): ?>
+    <?php try {
+        echo $block->getInstallWidgetButtonHtml();
+        echo $block->getUninstallWidgetButtonHtml();
+    } catch (\Exception $e) {} ?>
+<?php endif; ?>

@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="ages" translate="label" sortOrder="10">
+            <label>Ages Integration</label>
+        </tab>
+        <section id="ages" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Chat Widget</label>
+            <tab>ages</tab>
+            <resource>Ages_Integration::company_config</resource>
+            <group id="integration" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Chat Widget Integration</label>
+                <field id="company_hash" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Company Hash ID</label>
+                </field>
+                <field id="test_mode" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Test Mode</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="widget_enabled" translate="label" type="button" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <frontend_model>Ages\Integration\Block\System\Config\Widget</frontend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

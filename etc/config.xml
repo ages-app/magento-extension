@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <csp>
+            <mode>
+                <storefront>
+                    <report_only>1</report_only>
+                </storefront>
+            </mode>
+        </csp>
+        <ages>
+            <integration>
+                <test_mode>0</test_mode>
+                <widget>
+                    <enabled>0</enabled>
+                </widget>
+            </integration>
+        </ages>
+    </default>
+</config>
