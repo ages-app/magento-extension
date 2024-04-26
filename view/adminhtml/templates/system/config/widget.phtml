@@ -48,10 +48,7 @@ require([
 script;
 ?>
 <?= /* @noEscape */ $secureRenderer->renderTag('script', [], $scriptString, false) ?>
-
 <?php if ($block->getCompanyHash()): ?>
-    <?php try {
-        echo $block->getInstallWidgetButtonHtml();
-        echo $block->getUninstallWidgetButtonHtml();
-    } catch (\Exception $e) {} ?>
+    <?= $block->getInstallWidgetButtonHtml() ?>
+    <?= $block->getUninstallWidgetButtonHtml() ?>
 <?php endif; ?>

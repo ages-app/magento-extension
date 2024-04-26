@@ -31,7 +31,6 @@ class ToggleWidget extends \Magento\Backend\App\Action implements \Magento\Frame
      */
     protected \Magento\Framework\Filter\StripTags $tagFilter;
 
-
     /**
      * @param \Magento\Backend\App\Action\Context $context
      * @param \Magento\Framework\App\Config\Storage\WriterInterface $configWriter
@@ -91,7 +90,6 @@ class ToggleWidget extends \Magento\Backend\App\Action implements \Magento\Frame
         $this->cacheTypeList->cleanType(\Magento\PageCache\Model\Cache\Type::TYPE_IDENTIFIER);
 
     }
-
 
     /**
      * @param bool $enabled
