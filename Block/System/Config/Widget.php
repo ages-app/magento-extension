@@ -7,7 +7,7 @@ class Widget extends \Magento\Config\Block\System\Config\Form\Field
     /**
      * @var string
      */
-    protected string $_template = 'Ages_Integration::system/config/widget.phtml';
+    protected $_template = 'Ages_Integration::system/config/widget.phtml';
 
     /**
      * @var \Ages\Integration\Helper\Data $helper
